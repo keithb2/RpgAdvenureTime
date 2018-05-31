@@ -11,7 +11,22 @@ namespace RpgAdvenureTime
 
             var choice = Console.ReadLine();
 
-            Console.WriteLine("You chose " + choice + ".");
+            if(choice.Equals("left"))
+            {
+                // what to do?
+            }
+            else if (choice.Equals("straight"))
+            {
+                // what to do?
+            }
+            else if (choice.Equals("right"))
+            {
+                // what to do?
+            }
+            else
+            {
+                Console.WriteLine("you lose.");
+            }
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
