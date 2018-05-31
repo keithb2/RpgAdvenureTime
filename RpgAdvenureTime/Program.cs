@@ -27,16 +27,16 @@ namespace RpgAdvenureTime
 
                 if (choice.Equals("kill"))
                 {
-                    // do something
+                    Console.WriteLine("You approach the two farmers struggling to repair the wagon wheel.  The first man looks up in time to see your dagger puncture his right eye.");
                 }
                 else if (choice.Equals("help"))
                 {
 
-                    // do something else
+                    Console.WriteLine("you greet the obviously exhasted farmers and offer a hand.  within moments you have the wheel back on and the farmers are on there way.");
                 }
                 else
                 {
-                    // do ashir
+                    Console.WriteLine("You have to will to help out strangers so you hustle past even as they cry out for help.");
                 }
 
             }
