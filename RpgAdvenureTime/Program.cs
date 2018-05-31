@@ -13,15 +13,32 @@ namespace RpgAdvenureTime
 
             if(choice.Equals("left"))
             {
-                // what to do?
+                Console.WriteLine("You arive at a dusty oasis with barely any water for your horse");
             }
             else if (choice.Equals("straight"))
             {
-                // what to do?
+                Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
             }
             else if (choice.Equals("right"))
             {
-                // what to do?
+                Console.WriteLine("As you begin your journey to the right you come across a broken down carava... do you [kill] them and take loot or do you [help] them?");
+
+                choice = Console.ReadLine();
+
+                if (choice.Equals("kill"))
+                {
+                    // do something
+                }
+                else if (choice.Equals("help"))
+                {
+
+                    // do something else
+                }
+                else
+                {
+                    // do ashir
+                }
+
             }
             else
             {
