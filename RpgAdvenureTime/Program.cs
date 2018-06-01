@@ -15,9 +15,29 @@ namespace RpgAdvenureTime
             {
                 Console.WriteLine("You arive at a dusty oasis with barely any water for your horse");
 
-                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach.");
+                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  "Got any spare change?"".);
+
+                Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
+                {
+                    if (choice.Equals("change"))
+
+                        Console.WriteLine(You toss a few spare coins at his feet);
+
+                    else if (choice.Equals(tell))
+
+                        Console.WriteLine(The haggard looking man jumps backwards in alarm as you scream at him to go away)
 
 
+
+
+
+
+
+
+                }
+                
+
+                
             }
             else if (choice.Equals("straight"))
             {
