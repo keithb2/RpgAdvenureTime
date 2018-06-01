@@ -38,7 +38,14 @@ namespace RpgAdvenureTime
 
                 if (choice.Equals("trip"))
                 {
-                    Console.WriteLine("You take a deep breath and step forward into the gloomy forrest.");
+                    Console.WriteLine("You take a deep breath and step forward into the gloomy forrest. There gaps of moonlight leaving little for you to see. Out of the darkness a goblin attacks.  Do you [fight] or [run]");
+                    {
+                        choice = Console.ReadLine();
+
+                        if (choice.Equals("fight"))
+                            Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
+
+                    }
                 }
                 else if (choice.Equals("camp"))
                 {
@@ -49,8 +56,18 @@ namespace RpgAdvenureTime
                     {
                         choice = Console.ReadLine();
 
-                        if(choice.Equals("run"))
+                        if (choice.Equals("run"))
+                        {
+                            Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
 
+                            if (choice.Equals("run"))
+                                Console.WriteLine("You turn to run but are winded from previos running and the goblin catches you and stabs his rusty sword through your back.");
+
+                            else if (choice.Equals("fight"))
+
+                                    Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
+
+                        }
 
 
                     }
