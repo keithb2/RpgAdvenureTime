@@ -40,7 +40,9 @@ namespace RpgAdvenureTime
                 }
                 else if (choice.Equals("camp"))
                 {
+                    Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
 
+                    Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.")
                 }
             }
             else if (choice.Equals("right"))
