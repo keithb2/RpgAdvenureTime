@@ -41,9 +41,15 @@ namespace RpgAdvenureTime
                     Console.WriteLine("You take a deep breath and step forward into the gloomy forrest. There gaps of moonlight leaving little for you to see. Out of the darkness a goblin attacks.  Do you [fight] or [run]");
                     {
                         choice = Console.ReadLine();
+                        {
+                            if (choice.Equals("fight"))
+                                Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
 
-                        if (choice.Equals("fight"))
-                            Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
+                            else if (choice.Equals("run"))
+                                Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
+                        }
+
+                        
 
                     }
                 }
