@@ -15,36 +15,33 @@ namespace RpgAdvenureTime
             {
                 Console.WriteLine("You arive at a dusty oasis with barely any water for your horse");
 
-                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  "Got any spare change?"".);
+                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
 
                 Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
+
+                if (choice.Equals("change"))
                 {
-                    if (choice.Equals("change"))
-
-                        Console.WriteLine(You toss a few spare coins at his feet);
-
-                    else if (choice.Equals(tell))
-
-                        Console.WriteLine(The haggard looking man jumps backwards in alarm as you scream at him to go away)
-
-
-
-
-
-
-
-
+                    Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
                 }
-                
-
-                
+                 else if(choice.Equals("tell"))
+                {
+                    Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
+                }
             }
             else if (choice.Equals("straight"))
             {
                 Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
 
-                Console.WriteLine("You take a deep breath and begin your trip into the forrest, even though the sun is starting to set")
+                Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
+                
+                if (choice.Equals("trip"))
+                {
+                    Console.WriteLine("You take a deep breath and step forward into the gloomy forrest.");
+                }
+                else if (choice.Equals("camp"))
+                {
 
+                }
             }
             else if (choice.Equals("right"))
             {
