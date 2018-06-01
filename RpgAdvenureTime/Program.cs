@@ -33,16 +33,27 @@ namespace RpgAdvenureTime
                 Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
 
                 Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
-                
+
+                choice = Console.ReadLine();
+
                 if (choice.Equals("trip"))
                 {
                     Console.WriteLine("You take a deep breath and step forward into the gloomy forrest.");
                 }
                 else if (choice.Equals("camp"))
                 {
+                    
                     Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
 
-                    Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.")
+                    Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+                    {
+                        choice = Console.ReadLine();
+
+                        if(choice.Equals("run"))
+
+
+
+                    }
                 }
             }
             else if (choice.Equals("right"))
