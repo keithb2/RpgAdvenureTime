@@ -14,10 +14,17 @@ namespace RpgAdvenureTime
             if(choice.Equals("left"))
             {
                 Console.WriteLine("You arive at a dusty oasis with barely any water for your horse");
+
+                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach.");
+
+
             }
             else if (choice.Equals("straight"))
             {
                 Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
+
+                Console.WriteLine("You take a deep breath and begin your trip into the forrest, even though the sun is starting to set")
+
             }
             else if (choice.Equals("right"))
             {
