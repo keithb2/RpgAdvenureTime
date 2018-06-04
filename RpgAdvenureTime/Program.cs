@@ -101,7 +101,21 @@ namespace RpgAdvenureTime
 
                         if (choice.Equals("sneak"))
                         {
-                            Console.WriteLine("you sneak in and take back your stuff"); 
+                            Console.WriteLine("you sneak in and take back your stuff");
+
+                            Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue] or [ignore]");
+
+                            choice = Console.ReadLine();
+
+                            if (choice.Equals("rescue"))
+                            {
+                                Console.WriteLine("you rescue prisoner.");
+                            }
+
+                            else if (choice.Equals("ignore"))
+                            {
+                                Console.WriteLine("you ignore");
+                            }
                         }
                         else if (choice.Equals("attack"))
                         {
