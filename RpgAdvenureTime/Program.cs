@@ -19,6 +19,8 @@ namespace RpgAdvenureTime
 
                 Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
 
+                choice = Console.ReadLine();
+
                 if (choice.Equals("change"))
                 {
                     Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
@@ -37,15 +39,13 @@ namespace RpgAdvenureTime
                 if (choice.Equals("rest"))
                 {
                     Console.WriteLine("you sleep peacefully through the night, you awake and continue journey.");
-
                 }
                 else if (choice.Equals("continue"))
                 {
                     Console.WriteLine("you travel through night, get lost.");
 
-                    Console.WriteLine("you spend the majority of the night trying to find your way back to the road.")
+                    Console.WriteLine("you spend the majority of the night trying to find your way back to the road.");
                 }
-                
             }
             else if (choice.Equals("straight"))
             {
@@ -58,44 +58,41 @@ namespace RpgAdvenureTime
                 if (choice.Equals("trip"))
                 {
                     Console.WriteLine("You take a deep breath and step forward into the gloomy forrest. There gaps of moonlight leaving little for you to see. Out of the darkness a goblin attacks.  Do you [fight] or [run]");
+
+                    choice = Console.ReadLine();
+
+                    if (choice.Equals("fight"))
                     {
-                        choice = Console.ReadLine();
-                        {
-                            if (choice.Equals("fight"))
-                                Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
-
-                            else if (choice.Equals("run"))
-                                Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
-                        }
-
+                        Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
+                    }
+                    else if (choice.Equals("run"))
+                    {
+                        Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
                     }
                 }
                 else if (choice.Equals("camp"))
                 {
-                    
                     Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
 
                     Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+
+                    choice = Console.ReadLine();
+
+                    if (choice.Equals("run"))
                     {
-                        choice = Console.ReadLine();
+                        Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
 
                         if (choice.Equals("run"))
                         {
-                            Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
-
-                            if (choice.Equals("run"))
-                                Console.WriteLine("You turn to run but are winded from previous running and the goblin catches you and stabs his rusty sword through your defensless back.");
-
-                            else if (choice.Equals("fight"))
-
-                                    Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
+                            Console.WriteLine("You turn to run but are winded from previous running and the goblin catches you and stabs his rusty sword through your defensless back.");
+                        }
+                        else if (choice.Equals("fight"))
+                        {
+                            Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
 
                             Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
-
                         }
-
-
-                    }
+                    } 
                 }
             }
             else if (choice.Equals("right"))
@@ -110,7 +107,6 @@ namespace RpgAdvenureTime
                 }
                 else if (choice.Equals("help"))
                 {
-
                     Console.WriteLine("you greet the obviously exhasted farmers and offer a hand.  within moments you have the wheel back on and the farmers are on there way.");
                 }
                 else
@@ -121,7 +117,6 @@ namespace RpgAdvenureTime
 
                     Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
                 }
-
             }
             else
             {
