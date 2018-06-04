@@ -99,14 +99,7 @@ namespace RpgAdvenureTime
                         
                         if (choice.Equals("sneak"))
                         {
-                            Console.WriteLine("you sneak in and take back your stuff");
-                            {
-                                else if (choice.Equals("attack"))
-
-                                    Console.WriteLine("you attack goblin and take back your stuff.");
-                            }
-
-                            
+                            Console.WriteLine("you sneak in and take back your stuff"); 
                         }
                     }
                 }
