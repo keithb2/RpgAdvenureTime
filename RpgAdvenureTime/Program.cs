@@ -7,13 +7,13 @@ namespace RpgAdvenureTime
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the greatest adventure EVER!");
-            Console.WriteLine("Which direction would you like to go? [left/straight/right]");
+            Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right]");
 
             var choice = Console.ReadLine();
 
             if(choice.Equals("left"))
             {
-                Console.WriteLine("You arive at a dusty oasis with barely any water for your horse");
+                Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
 
                 Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
 
@@ -40,12 +40,10 @@ namespace RpgAdvenureTime
 
                 }
                 else if (choice.Equals("continue"))
-
+                {
                     Console.WriteLine("you travel through night, get lost.");
-
-
-
-
+                }
+                
             }
             else if (choice.Equals("straight"))
             {
@@ -68,8 +66,6 @@ namespace RpgAdvenureTime
                                 Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
                         }
 
-                        
-
                     }
                 }
                 else if (choice.Equals("camp"))
@@ -86,7 +82,7 @@ namespace RpgAdvenureTime
                             Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
 
                             if (choice.Equals("run"))
-                                Console.WriteLine("You turn to run but are winded from previos running and the goblin catches you and stabs his rusty sword through your back.");
+                                Console.WriteLine("You turn to run but are winded from previous running and the goblin catches you and stabs his rusty sword through your defensless back.");
 
                             else if (choice.Equals("fight"))
 
@@ -116,6 +112,10 @@ namespace RpgAdvenureTime
                 else
                 {
                     Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
+
+                    Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
+
+                    Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
                 }
 
             }
