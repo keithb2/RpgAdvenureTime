@@ -92,7 +92,23 @@ namespace RpgAdvenureTime
 
                             Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
                         }
-                    } 
+                     }
+                    else if (choice.Equals("slowly"))
+                    {
+                        Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
+                        
+                        if (choice.Equals("sneak"))
+                        {
+                            Console.WriteLine("you sneak in and take back your stuff");
+                            {
+                                else if (choice.Equals("attack"))
+
+                                    Console.WriteLine("you attack goblin and take back your stuff.");
+                            }
+
+                            
+                        }
+                    }
                 }
             }
             else if (choice.Equals("right"))
