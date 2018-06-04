@@ -120,6 +120,22 @@ namespace RpgAdvenureTime
                         else if (choice.Equals("attack"))
                         {
                             Console.WriteLine("you attack.");
+
+                            Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
+
+                            choice = Console.ReadLine();
+
+                            if (choice.Equals("loot"))
+                            {
+                                Console.WriteLine("you find a gold pocket watch.");
+
+                            }
+                            else if (choice.Equals("revive"))
+                            {
+                                Console.WriteLine("you save prisoner");
+
+                            }
+                                
                         }
                     }
                 }
