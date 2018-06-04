@@ -123,7 +123,18 @@ namespace RpgAdvenureTime
                 }
                 else if (choice.Equals("help"))
                 {
-                    Console.WriteLine("you greet the obviously exhasted farmers and offer a hand.  within moments you have the wheel back on and the farmers are on there way.");
+                    Console.WriteLine("you use [muscle] or [brains]");
+
+                    choice = Console.ReadLine();
+
+                    if (choice.Equals("muscle"))
+                    {
+                        Console.WriteLine("use muscle");
+                    }
+                    else if (choice.Equals("brains"))
+                    {
+                        Console.WriteLine("use brains");
+                    }                        
                 }
                 else
                 {
