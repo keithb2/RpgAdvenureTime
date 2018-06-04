@@ -42,6 +42,8 @@ namespace RpgAdvenureTime
                 else if (choice.Equals("continue"))
                 {
                     Console.WriteLine("you travel through night, get lost.");
+
+                    Console.WriteLine("you spend the majority of the night trying to find your way back to the road.")
                 }
                 
             }
@@ -87,6 +89,8 @@ namespace RpgAdvenureTime
                             else if (choice.Equals("fight"))
 
                                     Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
+
+                            Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
 
                         }
 
