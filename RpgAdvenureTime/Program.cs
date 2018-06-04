@@ -103,7 +103,23 @@ namespace RpgAdvenureTime
 
                 if (choice.Equals("kill"))
                 {
-                    Console.WriteLine("You approach the two farmers struggling to repair the wagon wheel.  The first man looks up in time to see your dagger puncture his right eye.");
+                    Console.WriteLine("You approach the two farmers struggling to repair the wagon wheel.  The first man looks up in time to see your dagger puncture his right eye.  The second farmer falls with a quick slash to his throat.");
+
+                    Console.WriteLine("you loot the caravan, and as you finish you whitness one of the farmers rise from the dead");
+
+                    Console.WriteLine("you can either [fight] or [run]");
+                    {
+                        choice = Console.ReadLine();
+
+                        if (choice.Equals("fight"))
+                        {
+                            Console.WriteLine("you kill zombie");
+                        }
+                        else if (choice.Equals("run"))
+                        {
+                            Console.WriteLine("you run away as fast as you can.");
+                        }
+                    }
                 }
                 else if (choice.Equals("help"))
                 {
