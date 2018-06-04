@@ -91,6 +91,19 @@ namespace RpgAdvenureTime
                             Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
 
                             Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
+
+                            Console.WriteLine("as you return to the road you can go [left] or [right] to the left is a small town, to the right is a big city.");
+
+                            choice = Console.ReadLine();
+
+                            if (choice.Equals("left"))
+                            {
+                                Console.WriteLine("you go left");
+                            }
+                            else if (choice.Equals("right"))
+                            {
+                                Console.WriteLine("you go right.");
+                            }
                         }
                      }
                     else if (choice.Equals("slowly"))
