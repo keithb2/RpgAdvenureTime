@@ -27,6 +27,25 @@ namespace RpgAdvenureTime
                 {
                     Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
                 }
+
+                Console.WriteLine("After a quick drink you continue on your way");
+
+                Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
+
+                choice = Console.ReadLine();
+
+                if (choice.Equals("rest"))
+                {
+                    Console.WriteLine("you sleep peacefully through the night, you awake and continue journey.");
+
+                }
+                else if (choice.Equals("continue"))
+
+                    Console.WriteLine("you travel through night, get lost.");
+
+
+
+
             }
             else if (choice.Equals("straight"))
             {
@@ -96,7 +115,7 @@ namespace RpgAdvenureTime
                 }
                 else
                 {
-                    Console.WriteLine("You have to will to help out strangers so you hustle past even as they cry out for help.");
+                    Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
                 }
 
             }
