@@ -49,7 +49,7 @@ namespace RpgAdvenureTime
             }
             else if (choice.Equals("straight"))
             {
-                PathStraightBegin();
+                NewMethod();
             }
             else if (choice.Equals("right"))
             {
@@ -110,10 +110,11 @@ namespace RpgAdvenureTime
             Console.ReadKey();
         }
 
-        private static void PathStraightBegin()
+        private static void NewMethod()
         {
-            StraightPathTripCamp();
-            tripcampwriteline();
+            Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
+
+            Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
 
             var choice = Console.ReadLine();
 
@@ -125,16 +126,6 @@ namespace RpgAdvenureTime
             {
                 GoblinACampStart();
             }
-        }
-
-        private static void StraightPathTripCamp()
-        {
-            Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
-        }
-
-        private static void tripcampwriteline()
-        {
-            Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
         }
 
         private static void GoblinACampStart()
