@@ -17,7 +17,7 @@ namespace RpgAdvenureTime
             }
             else if (choice.Equals("straight"))
             {
-                NewMethod();
+                GoStraightPath();
             }
             else if (choice.Equals("right"))
             {
@@ -145,7 +145,7 @@ namespace RpgAdvenureTime
             Console.WriteLine("you spend the majority of the night trying to find your way back to the road.");
         }
 
-        private static void NewMethod()
+        private static void GoStraightPath()
         {
             Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
 
