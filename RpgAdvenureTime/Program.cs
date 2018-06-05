@@ -21,53 +21,7 @@ namespace RpgAdvenureTime
             }
             else if (choice.Equals("right"))
             {
-                Console.WriteLine("As you begin your journey to the right you come across a broken down carava... do you [kill] them and take loot or do you [help] them?");
-
-                choice = Console.ReadLine();
-
-                if (choice.Equals("kill"))
-                {
-                    Console.WriteLine("You approach the two farmers struggling to repair the wagon wheel.  The first man looks up in time to see your dagger puncture his right eye.  The second farmer falls with a quick slash to his throat.");
-
-                    Console.WriteLine("you loot the caravan, and as you finish you whitness one of the farmers rise from the dead");
-
-                    Console.WriteLine("you can either [fight] or [run]");
-                    {
-                        KillFarmers();
-                    }
-                }
-                else if (choice.Equals("help"))
-                {
-                    HelpingFarmers();
-                }
-                else
-                {
-                    Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
-
-                    Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
-
-                    Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
-
-                    Console.WriteLine("You arrive at the city, it's night time and you see two guards at the main gate.  There are several campfires burning nearby surrounded by weary travelers and merchants.  You can approach [guards/merchants/travelers]");
-
-                    choice = Console.ReadLine();
-
-                    if (choice.Equals("guards"))
-                    {
-                        Console.WriteLine("you approach guards");
-                    }
-                    
-                    else if (choice.Equals("merchants"))
-                    {
-                        Console.WriteLine("you approach merchants.");
-                    }
-
-                    else if (choice.Equals("travelers"))
-                    {
-                        Console.WriteLine("you approach travelers");
-                    }
-                            
-                }
+                ChooseRightPath();
             }
             else
             {
@@ -76,6 +30,75 @@ namespace RpgAdvenureTime
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void ChooseRightPath()
+        {
+            Console.WriteLine("As you begin your journey to the right you come across a broken down carava... do you [kill] them and take loot or do you [help] them?");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("kill"))
+            {
+                KillFarmers();
+            }
+            else if (choice.Equals("help"))
+            {
+                HelpingFarmers();
+            }
+            else
+            {
+                TravelingToCity();
+
+            }
+        }
+
+        private static void TravelingToCity()
+        {
+            AtTheCityGates();
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("guards"))
+            {
+                ApproachGuardsCity();
+            }
+
+            else if (choice.Equals("merchants"))
+            {
+                ApproachMerchantsCity();
+            }
+
+            else if (choice.Equals("travelers"))
+            {
+                ApproachTravelersCity();
+            }
+        }
+
+        private static void ApproachGuardsCity()
+        {
+            Console.WriteLine("you approach guards");
+        }
+
+        private static void ApproachMerchantsCity()
+        {
+            Console.WriteLine("you approach merchants.");
+        }
+
+        private static void ApproachTravelersCity()
+        {
+            Console.WriteLine("you approach travelers");
+        }
+
+        private static void AtTheCityGates()
+        {
+            Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
+
+            Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
+
+            Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
+
+            Console.WriteLine("You arrive at the city, it's night time and you see two guards at the main gate.  There are several campfires burning nearby surrounded by weary travelers and merchants.  You can approach [guards/merchants/travelers]");
         }
 
         private static void OasisStart()
@@ -228,6 +251,12 @@ namespace RpgAdvenureTime
 
         private static void KillFarmers()
         {
+            Console.WriteLine("You approach the two farmers struggling to repair the wagon wheel.  The first man looks up in time to see your dagger puncture his right eye.  The second farmer falls with a quick slash to his throat.");
+
+            Console.WriteLine("you loot the caravan, and as you finish you whitness one of the farmers rise from the dead");
+
+            Console.WriteLine("you can either [fight] or [run]");
+
             var choice = Console.ReadLine();
 
             if (choice.Equals("fight"))
