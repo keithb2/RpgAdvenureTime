@@ -13,39 +13,7 @@ namespace RpgAdvenureTime
 
             if(choice.Equals("left"))
             {
-                Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
-
-                Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
-
-                Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
-
-                choice = Console.ReadLine();
-
-                if (choice.Equals("change"))
-                {
-                    Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
-                }
-                 else if(choice.Equals("tell"))
-                {
-                    Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
-                }
-
-                Console.WriteLine("After a quick drink you continue on your way");
-
-                Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
-
-                choice = Console.ReadLine();
-
-                if (choice.Equals("rest"))
-                {
-                    Console.WriteLine("you sleep peacefully through the night, you awake and continue journey.");
-                }
-                else if (choice.Equals("continue"))
-                {
-                    Console.WriteLine("you travel through night, get lost.");
-
-                    Console.WriteLine("you spend the majority of the night trying to find your way back to the road.");
-                }
+                OasisStart();
             }
             else if (choice.Equals("straight"))
             {
@@ -110,6 +78,73 @@ namespace RpgAdvenureTime
             Console.ReadKey();
         }
 
+        private static void OasisStart()
+        {
+            OasisStart2();
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("change"))
+            {
+                OasisBeggarGiveChange();
+            }
+            else if (choice.Equals("tell"))
+            {
+                OasisBeggarTell();
+            }
+
+            OasisDrink();
+
+            choice = Console.ReadLine();
+
+            if (choice.Equals("rest"))
+            {
+                CampOasis();
+            }
+            else if (choice.Equals("continue"))
+            {
+                ContinueTravels();
+            }
+        }
+
+        private static void OasisStart2()
+        {
+            Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
+
+            Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
+
+            Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
+        }
+
+        private static void OasisBeggarGiveChange()
+        {
+            Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
+        }
+
+        private static void OasisBeggarTell()
+        {
+            Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
+        }
+
+        private static void OasisDrink()
+        {
+            Console.WriteLine("After a quick drink you continue on your way");
+
+            Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
+        }
+
+        private static void CampOasis()
+        {
+            Console.WriteLine("you sleep peacefully through the night, you awake and continue journey.");
+        }
+
+        private static void ContinueTravels()
+        {
+            Console.WriteLine("you travel through night, get lost.");
+
+            Console.WriteLine("you spend the majority of the night trying to find your way back to the road.");
+        }
+
         private static void NewMethod()
         {
             Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
@@ -130,9 +165,8 @@ namespace RpgAdvenureTime
 
         private static void GoblinACampStart()
         {
-            Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
-
-            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+            GatherWoodCamp();
+            AwakeStolenSupplies();
 
             var choice = Console.ReadLine();
 
@@ -144,6 +178,16 @@ namespace RpgAdvenureTime
             {
                 SneakingToGoblinCampsite();
             }
+        }
+
+        private static void AwakeStolenSupplies()
+        {
+            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+        }
+
+        private static void GatherWoodCamp()
+        {
+            Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
         }
 
         private static void SneakingToGoblinCampsite()
