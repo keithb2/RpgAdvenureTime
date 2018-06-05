@@ -57,18 +57,7 @@ namespace RpgAdvenureTime
 
                 if (choice.Equals("trip"))
                 {
-                    Console.WriteLine("You take a deep breath and step forward into the gloomy forrest. There gaps of moonlight leaving little for you to see. Out of the darkness a goblin attacks.  Do you [fight] or [run]");
-
-                    choice = Console.ReadLine();
-
-                    if (choice.Equals("fight"))
-                    {
-                        Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
-                    }
-                    else if (choice.Equals("run"))
-                    {
-                        Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
-                    }
+                    Trip();
                 }
                 else if (choice.Equals("camp"))
                 {
@@ -88,24 +77,9 @@ namespace RpgAdvenureTime
                         }
                         else if (choice.Equals("fight"))
                         {
-                            Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
-
-                            Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
-
-                            Console.WriteLine("as you return to the road you can go [left] or [right] to the left is a small town, to the right is a big city.");
-
-                            choice = Console.ReadLine();
-
-                            if (choice.Equals("left"))
-                            {
-                                Console.WriteLine("you go left");
-                            }
-                            else if (choice.Equals("right"))
-                            {
-                                Console.WriteLine("you go right.");
-                            }
+                            GoblinFightA();
                         }
-                     }
+                    }
                     else if (choice.Equals("slowly"))
                     {
                         Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
@@ -181,18 +155,7 @@ namespace RpgAdvenureTime
                 }
                 else if (choice.Equals("help"))
                 {
-                    Console.WriteLine("you use [muscle] or [brains]");
-
-                    choice = Console.ReadLine();
-
-                    if (choice.Equals("muscle"))
-                    {
-                        Console.WriteLine("use muscle");
-                    }
-                    else if (choice.Equals("brains"))
-                    {
-                        Console.WriteLine("use brains");
-                    }                        
+                    HelpingFarmers();
                 }
                 else
                 {
@@ -216,11 +179,12 @@ namespace RpgAdvenureTime
                         Console.WriteLine("you approach merchants.");
                     }
 
-                    else (choice.Equals("travelers"))
+                    else if (choice.Equals("travelers"))
+                    {
+                        Console.WriteLine("you approach travelers");
+                    }
                             
                 }
-
-
             }
             else
             {
@@ -229,6 +193,88 @@ namespace RpgAdvenureTime
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void GoblinFightA()
+        {
+            Console.WriteLine("you lung at the goblin with nothing but your fists and tackle it to the ground.  After a short scuffle you manage to kill the goblin and recover all of your supplies plus your trusty horse");
+
+            Console.WriteLine("seems like things are looking up for you now, you got everything you lost back AND you can see a road ahead that leads to some sort of civilisation.");
+
+            Console.WriteLine("as you return to the road you can go [left] or [right] to the left is a small town, to the right is a big city.");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("left"))
+            {
+                GoLeftGobo();
+            }
+            else if (choice.Equals("right"))
+            {
+                GoRightGobo();
+            }
+        }
+
+        private static void GoRightGobo()
+        {
+            Console.WriteLine("you go right.");
+        }
+
+        private static void GoLeftGobo()
+        {
+            Console.WriteLine("you go left");
+        }
+
+        private static void HelpingFarmers()
+        {
+            Console.WriteLine("you use [muscle] or [brains]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("muscle"))
+            {
+                Muscle();
+            }
+            else if (choice.Equals("brains"))
+            {
+                Brains();
+            }
+        }
+
+        private static void Brains()
+        {
+            Console.WriteLine("use brains");
+        }
+
+        private static void Muscle()
+        {
+            Console.WriteLine("use muscle");
+        }
+
+        private static void Trip()
+        {
+            Console.WriteLine("You take a deep breath and step forward into the gloomy forrest. There gaps of moonlight leaving little for you to see. Out of the darkness a goblin attacks.  Do you [fight] or [run]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("fight"))
+            {
+                FightGoblin();
+            }
+            else if (choice.Equals("run"))
+            {
+                RunFromGoblin();
+            }
+        }
+
+        private static void RunFromGoblin()
+        {
+            Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
+        }
+
+        private static void FightGoblin()
+        {
+            Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
         }
     }
 }
