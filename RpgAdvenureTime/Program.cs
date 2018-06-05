@@ -201,7 +201,26 @@ namespace RpgAdvenureTime
                     Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
 
                     Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
+
+                    Console.WriteLine("You arrive at the city, it's night time and you see two guards at the main gate.  There are several campfires burning nearby surrounded by weary travelers and merchants.  You can approach [guards/merchants/travelers]");
+
+                    choice = Console.ReadLine();
+
+                    if (choice.Equals("guards"))
+                    {
+                        Console.WriteLine("you approach guards");
+                    }
+                    
+                    else if (choice.Equals("merchants"))
+                    {
+                        Console.WriteLine("you approach merchants.");
+                    }
+
+                    else (choice.Equals("travelers"))
+                            
                 }
+
+
             }
             else
             {
