@@ -49,83 +49,7 @@ namespace RpgAdvenureTime
             }
             else if (choice.Equals("straight"))
             {
-                Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
-
-                Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
-
-                choice = Console.ReadLine();
-
-                if (choice.Equals("trip"))
-                {
-                    Trip();
-                }
-                else if (choice.Equals("camp"))
-                {
-                    Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
-
-                    Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
-
-                    choice = Console.ReadLine();
-
-                    if (choice.Equals("run"))
-                    {
-                        Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
-
-                        if (choice.Equals("run"))
-                        {
-                            Console.WriteLine("You turn to run but are winded from previous running and the goblin catches you and stabs his rusty sword through your defensless back.");
-                        }
-                        else if (choice.Equals("fight"))
-                        {
-                            GoblinFightA();
-                        }
-                    }
-                    else if (choice.Equals("slowly"))
-                    {
-                        Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
-
-                        choice = Console.ReadLine();
-
-                        if (choice.Equals("sneak"))
-                        {
-                            Console.WriteLine("you sneak in and take back your stuff");
-
-                            Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue] or [ignore]");
-
-                            choice = Console.ReadLine();
-
-                            if (choice.Equals("rescue"))
-                            {
-                                Console.WriteLine("you rescue prisoner.");
-                            }
-
-                            else if (choice.Equals("ignore"))
-                            {
-                                Console.WriteLine("you ignore");
-                            }
-                        }
-                        else if (choice.Equals("attack"))
-                        {
-                            Console.WriteLine("you attack.");
-
-                            Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
-
-                            choice = Console.ReadLine();
-
-                            if (choice.Equals("loot"))
-                            {
-                                Console.WriteLine("you find a gold pocket watch.");
-
-                            }
-                            else if (choice.Equals("revive"))
-                            {
-                                Console.WriteLine("you save prisoner");
-
-                            }
-                                
-                        }
-                    }
-                }
+                PathStraightBegin();
             }
             else if (choice.Equals("right"))
             {
@@ -141,16 +65,7 @@ namespace RpgAdvenureTime
 
                     Console.WriteLine("you can either [fight] or [run]");
                     {
-                        choice = Console.ReadLine();
-
-                        if (choice.Equals("fight"))
-                        {
-                            Console.WriteLine("you kill zombie");
-                        }
-                        else if (choice.Equals("run"))
-                        {
-                            Console.WriteLine("you run away as fast as you can.");
-                        }
+                        KillFarmers();
                     }
                 }
                 else if (choice.Equals("help"))
@@ -193,6 +108,173 @@ namespace RpgAdvenureTime
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void PathStraightBegin()
+        {
+            StraightPathTripCamp();
+            tripcampwriteline();
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("trip"))
+            {
+                Trip();
+            }
+            else if (choice.Equals("camp"))
+            {
+                GoblinACampStart();
+            }
+        }
+
+        private static void StraightPathTripCamp()
+        {
+            Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
+        }
+
+        private static void tripcampwriteline()
+        {
+            Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
+        }
+
+        private static void GoblinACampStart()
+        {
+            Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
+
+            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("run"))
+            {
+                GoblinARun(choice);
+            }
+            else if (choice.Equals("slowly"))
+            {
+                SneakingToGoblinCampsite();
+            }
+        }
+
+        private static void SneakingToGoblinCampsite()
+        {
+            Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("sneak"))
+            {
+                choice = SneakByGoblin();
+            }
+            else if (choice.Equals("attack"))
+            {
+                AttackOption2();
+
+            }
+        }
+
+        private static void GoblinARun(string choice)
+        {
+            Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
+
+            if (choice.Equals("run"))
+            {
+                RunFromGoblinA();
+            }
+            else if (choice.Equals("fight"))
+            {
+                GoblinFightA();
+            }
+        }
+
+        private static void RunFromGoblinA()
+        {
+            Console.WriteLine("You turn to run but are winded from previous running and the goblin catches you and stabs his rusty sword through your defensless back.");
+        }
+
+        private static void KillFarmers()
+        {
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("fight"))
+            {
+                KillZombie();
+            }
+            else if (choice.Equals("run"))
+            {
+                RunFromZombie();
+            }
+        }
+
+        private static void RunFromZombie()
+        {
+            Console.WriteLine("you run away as fast as you can.");
+        }
+
+        private static void KillZombie()
+        {
+            Console.WriteLine("you kill zombie");
+        }
+
+        private static string SneakByGoblin()
+        {
+            string choice;
+            Console.WriteLine("you sneak in and take back your stuff");
+
+            Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue] or [ignore]");
+
+            choice = Console.ReadLine();
+
+            if (choice.Equals("rescue"))
+            {
+                RescueGoblinPrisoner();
+            }
+
+            else if (choice.Equals("ignore"))
+            {
+                IgnoreGoblinPrisoner();
+            }
+
+            return choice;
+        }
+
+        private static void IgnoreGoblinPrisoner()
+        {
+            Console.WriteLine("you ignore");
+        }
+
+        private static void RescueGoblinPrisoner()
+        {
+            Console.WriteLine("you rescue prisoner.");
+        }
+
+        private static void AttackOption2()
+        {
+            Console.WriteLine("you attack.");
+
+            Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("loot"))
+            {
+                Loot();
+
+            }
+            else if (choice.Equals("revive"))
+            {
+                Revive();
+
+            }
+        }
+
+        private static void Revive()
+        {
+            Console.WriteLine("you save prisoner");
+        }
+
+        private static void Loot()
+        {
+            Console.WriteLine("you find a gold pocket watch.");
         }
 
         private static void GoblinFightA()
