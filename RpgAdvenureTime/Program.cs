@@ -50,9 +50,6 @@ namespace RpgAdvenureTime
 
         private static void TravelingToCity()
         {
-            Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
-
-            Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
 
             Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
 
@@ -175,8 +172,7 @@ namespace RpgAdvenureTime
 
         private static void GoblinACampStart()
         {
-            GatherWoodCamp();
-            AwakeStolenSupplies();
+            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
 
             var choice = Console.ReadLine();
 
@@ -188,16 +184,6 @@ namespace RpgAdvenureTime
             {
                 SneakingToGoblinCampsite();
             }
-        }
-
-        private static void AwakeStolenSupplies()
-        {
-            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
-        }
-
-        private static void GatherWoodCamp()
-        {
-            Console.WriteLine("You spend a brief time gathering some dry wood at the edge of the forrest always keeping one eye on the shadows.  Once you've collected enough wood for the night you sit down and enjoy a nice warming fire while you chew on some deer jerkey.");
         }
 
         private static void SneakingToGoblinCampsite()
