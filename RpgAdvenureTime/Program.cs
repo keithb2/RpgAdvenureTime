@@ -31,10 +31,25 @@ namespace RpgAdvenureTime
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
+        private static void DugAHole()
+        {
+            Console.WriteLine("you dig down until you find a tunnel, you can go [left] or [right]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("left"))
+            {
+                Console.WriteLine("you go left down the dark tunnel");
+            }
+            else if (choice.Equals("right"))
+            {
+                Console.WriteLine("you go right down the dark tunnel");
+            }
+        }
 
         private static void ChooseRightPath()
         {
-            Console.WriteLine("As you begin your journey to the right you come across a broken down carava... do you [kill] them and take loot or do you [help] them?");
+            Console.WriteLine("As you begin your journey to the right you come across a broken down caravan... do you [kill] them and take loot or do you [help] them?");
 
             var choice = Console.ReadLine();
 
@@ -72,15 +87,46 @@ namespace RpgAdvenureTime
                 ApproachTravelersCity();
             }
         }
-
+        //incomplete
         private static void ApproachGuardsCity()
         {
             Console.WriteLine("you approach guards");
-        }
 
+            Console.WriteLine("One guard demands [bribe] the other guard [challenges].");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("bribe"))
+            {
+                Console.WriteLine("you bribe guard, gain entrance to city");
+            }
+
+            else if (choice.Equals("challenges"))
+            {
+                Console.WriteLine("you arm wrestle guard and win, you gain entrance to city");
+            }
+        }
+        //incomplete
         private static void ApproachMerchantsCity()
         {
             Console.WriteLine("you approach merchants.");
+
+            Console.WriteLine("you see 3 main merchants, one sells [weapons], one sells [armor], and the other sells [potions]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("weapons"))
+            {
+                Console.WriteLine("you buy weapon.");
+            }
+            else if (choice.Equals("armor"))
+            {
+                Console.WriteLine("you buy armor.");
+            }
+            else if (choice.Equals("potions"))
+            {
+                Console.WriteLine("you buy potions");
+            }
         }
 
         private static void ApproachTravelersCity()
