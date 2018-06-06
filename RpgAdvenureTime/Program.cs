@@ -46,11 +46,6 @@ namespace RpgAdvenureTime
             {
                 HelpingFarmers();
             }
-            else
-            {
-                TravelingToCity();
-
-            }
         }
 
         private static void TravelingToCity()
@@ -264,11 +259,15 @@ namespace RpgAdvenureTime
         private static void RunFromZombie()
         {
             Console.WriteLine("you run away as fast as you can.");
+
+            TravelingToCity();
         }
 
         private static void KillZombie()
         {
             Console.WriteLine("you kill zombie");
+
+            TravelingToCity();
         }
 
         private static string SneakByGoblin()
@@ -382,11 +381,15 @@ namespace RpgAdvenureTime
         private static void Brains()
         {
             Console.WriteLine("use brains");
+
+            TravelingToCity();
         }
 
         private static void Muscle()
         {
             Console.WriteLine("use muscle");
+
+            TravelingToCity();
         }
 
         private static void Trip()
