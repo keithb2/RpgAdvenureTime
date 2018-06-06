@@ -116,7 +116,7 @@ namespace RpgAdvenureTime
             }
         }
 
-        private static void WTF()
+        private static void OasisDeparture()
         {
             Console.WriteLine("After a quick drink you continue on your way");
 
@@ -137,11 +137,15 @@ namespace RpgAdvenureTime
         private static void OasisBeggarGiveChange()
         {
             Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
+
+            OasisDeparture();
         }
 
         private static void OasisBeggarTell()
         {
             Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
+
+            OasisDeparture();
         }
 
         private static void CampOasis()
