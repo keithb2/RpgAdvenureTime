@@ -7,7 +7,7 @@ namespace RpgAdvenureTime
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the greatest adventure EVER!");
-            Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right]");
+            Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right/down]");
 
             var choice = Console.ReadLine();
 
@@ -23,6 +23,10 @@ namespace RpgAdvenureTime
             {
                 ChooseRightPath();
             }
+            else if (choice.Equals("down"))
+            {
+                DugAHoleDown();
+            }
             else
             {
                 Console.WriteLine("you lose.");
@@ -31,7 +35,30 @@ namespace RpgAdvenureTime
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
-        private static void DugAHole()
+
+        private static void RightDarkness()
+        {
+            Console.WriteLine("you go right into the dakness. end of tunnel you find [zombies]");
+        }
+
+        private static void LeftDarkness()
+        {
+            Console.WriteLine("you go left into darkness.  end of tunnel you find [treasure]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("treasure"))
+            {
+                Treasure();
+            }
+        }
+
+        private static void Treasure()
+        {
+            Console.WriteLine("you loot treasure");
+        }
+
+        private static void DugAHoleDown()
         {
             Console.WriteLine("you dig down until you find a tunnel, you can go [left] or [right]");
 
@@ -39,11 +66,11 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("left"))
             {
-                Console.WriteLine("you go left down the dark tunnel");
+                LeftDarkness();
             }
             else if (choice.Equals("right"))
             {
-                Console.WriteLine("you go right down the dark tunnel");
+                RightDarkness();
             }
         }
 
