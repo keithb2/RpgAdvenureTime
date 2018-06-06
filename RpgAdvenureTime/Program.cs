@@ -55,7 +55,13 @@ namespace RpgAdvenureTime
 
         private static void TravelingToCity()
         {
-            AtTheCityGates();
+            Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
+
+            Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
+
+            Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
+
+            Console.WriteLine("You arrive at the city, it's night time and you see two guards at the main gate.  There are several campfires burning nearby surrounded by weary travelers and merchants.  You can approach [guards/merchants/travelers]");
 
             var choice = Console.ReadLine();
 
@@ -90,20 +96,13 @@ namespace RpgAdvenureTime
             Console.WriteLine("you approach travelers");
         }
 
-        private static void AtTheCityGates()
-        {
-            Console.WriteLine("You dont have the will to help out strangers so you hustle past even as they cry out for help.");
-
-            Console.WriteLine("You push aside the guilt of not helping those who need it and continue down the winding dirt road.");
-
-            Console.WriteLine("As you continue your travels you see a massive walled city in the distance.  This could be the perfect place to earn some coin as a mercenary");
-
-            Console.WriteLine("You arrive at the city, it's night time and you see two guards at the main gate.  There are several campfires burning nearby surrounded by weary travelers and merchants.  You can approach [guards/merchants/travelers]");
-        }
-
         private static void OasisStart()
         {
-            OasisStart2();
+            Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
+
+            Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
+
+            Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
 
             var choice = Console.ReadLine();
 
@@ -115,10 +114,15 @@ namespace RpgAdvenureTime
             {
                 OasisBeggarTell();
             }
+        }
 
-            OasisDrink();
+        private static void WTF()
+        {
+            Console.WriteLine("After a quick drink you continue on your way");
 
-            choice = Console.ReadLine();
+            Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
+
+            var choice = Console.ReadLine();
 
             if (choice.Equals("rest"))
             {
@@ -130,15 +134,6 @@ namespace RpgAdvenureTime
             }
         }
 
-        private static void OasisStart2()
-        {
-            Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
-
-            Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
-
-            Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
-        }
-
         private static void OasisBeggarGiveChange()
         {
             Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
@@ -147,13 +142,6 @@ namespace RpgAdvenureTime
         private static void OasisBeggarTell()
         {
             Console.WriteLine("The haggard looking man jumps backwards in alarm as you scream at him to go away");
-        }
-
-        private static void OasisDrink()
-        {
-            Console.WriteLine("After a quick drink you continue on your way");
-
-            Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
         }
 
         private static void CampOasis()
