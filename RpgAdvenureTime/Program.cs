@@ -1,17 +1,22 @@
 ﻿using System;
+using RpgAdvenureTime.Models;
 
 namespace RpgAdvenureTime
 {
     class Program
     {
+        private static Player _player;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the greatest adventure EVER!");
+            CreatePlayer();
+
+            Console.WriteLine("Welcome to the greatest adventure EVER, " + _player.Name + "!");
             Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right/down]");
 
             var choice = Console.ReadLine();
 
-            if(choice.Equals("left"))
+            if (choice.Equals("left"))
             {
                 OasisStart();
             }
@@ -34,6 +39,17 @@ namespace RpgAdvenureTime
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        private static void CreatePlayer()
+        {
+            _player = new Player();
+
+            Console.WriteLine("What's your name, dude?");
+            var name = Console.ReadLine();
+            _player.Name = name;
+
+            Console.WriteLine("Welcome, " + _player.Name);
         }
 
         private static void RightDarkness()
@@ -114,7 +130,7 @@ namespace RpgAdvenureTime
                 ApproachTravelersCity();
             }
         }
-        //incomplete
+
         private static void ApproachGuardsCity()
         {
             Console.WriteLine("you approach guards");
@@ -125,15 +141,25 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("bribe"))
             {
-                Console.WriteLine("you bribe guard, gain entrance to city");
+                Bribe();
             }
 
             else if (choice.Equals("challenges"))
             {
-                Console.WriteLine("you arm wrestle guard and win, you gain entrance to city");
+                Challenges();
             }
         }
-        //incomplete
+
+        private static void Challenges()
+        {
+            Console.WriteLine("you arm wrestle guard and win, you gain entrance to city");
+        }
+
+        private static void Bribe()
+        {
+            Console.WriteLine("you bribe guard, gain entrance to city");
+        }
+
         private static void ApproachMerchantsCity()
         {
             Console.WriteLine("you approach merchants.");
@@ -144,16 +170,31 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("weapons"))
             {
-                Console.WriteLine("you buy weapon.");
+                WeaponBuy();
             }
             else if (choice.Equals("armor"))
             {
-                Console.WriteLine("you buy armor.");
+                ArmorBuy();
             }
             else if (choice.Equals("potions"))
             {
-                Console.WriteLine("you buy potions");
+                PotionBuy();
             }
+        }
+
+        private static void PotionBuy()
+        {
+            Console.WriteLine("you buy potions");
+        }
+
+        private static void ArmorBuy()
+        {
+            Console.WriteLine("you buy armor.");
+        }
+
+        private static void WeaponBuy()
+        {
+            Console.WriteLine("you buy weapon.");
         }
 
         private static void ApproachTravelersCity()
