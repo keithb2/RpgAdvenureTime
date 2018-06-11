@@ -243,7 +243,7 @@ namespace RpgAdvenureTime
 
         private static void OasisBeggarGiveChange()
         {
-            Console.WriteLine(PlayerOne.Name + ", " + "You toss a few spare coins at his feet, the man then heads back the way he came.");
+            Console.WriteLine(PlayerOne.Name + ", You toss a few spare coins at his feet, the man then heads back the way he came.");
 
             OasisDeparture();
         }
@@ -288,7 +288,7 @@ namespace RpgAdvenureTime
 
         private static void GoblinACampStart()
         {
-            Console.WriteLine("When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
+            Console.WriteLine(PlayerOne.Name + ", When you finaly wake up you realize your horse is missing as well as your supplies.  Being the quick acting adventurer you are, you quickly follow the tracks into the forrest.  At least now you will be able to see where you are going.  If you [run] you may catch whoever did this sooner, or you could go [slowly] in hopes of catching whoever stole your stuff offguard");
 
             var choice = Console.ReadLine();
 
@@ -367,7 +367,7 @@ namespace RpgAdvenureTime
 
         private static void KillZombie()
         {
-            Console.WriteLine(PlayerOne.CharacterClass + ", " + "kills the zombie");
+            Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the zombie");
 
             TravelingToCity();
         }
