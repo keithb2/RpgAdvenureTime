@@ -227,7 +227,7 @@ namespace RpgAdvenureTime
         {
             Console.WriteLine("After a quick drink you continue on your way");
 
-            Console.WriteLine("You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
+            Console.WriteLine(PlayerOne.Name + ", " + "You travel for what seems like hours until the sun start to set.  you need to find a place to [rest] or [continue]");
 
             var choice = Console.ReadLine();
 
@@ -243,7 +243,7 @@ namespace RpgAdvenureTime
 
         private static void OasisBeggarGiveChange()
         {
-            Console.WriteLine("You toss a few spare coins at his feet, the man then heads back the way he came.");
+            Console.WriteLine(PlayerOne.Name + ", " + "You toss a few spare coins at his feet, the man then heads back the way he came.");
 
             OasisDeparture();
         }
@@ -269,7 +269,8 @@ namespace RpgAdvenureTime
 
         private static void GoStraightPath()
         {
-            Console.WriteLine("You walk for what seems like hours and come to a thick forest.");
+
+            Console.WriteLine(PlayerOne.Name + ", the " + PlayerOne.CharacterClass + ", " + "You walk for what seems like hours and come to a thick forest.");
 
             Console.WriteLine("You take a deep breath and begin your [trip] into the forrest, or you could wait and [camp] here for the night");
 
@@ -366,7 +367,7 @@ namespace RpgAdvenureTime
 
         private static void KillZombie()
         {
-            Console.WriteLine("you kill zombie");
+            Console.WriteLine(PlayerOne.CharacterClass + ", " + "kills the zombie");
 
             TravelingToCity();
         }
