@@ -10,4 +10,13 @@
 
 ## part 2
 
-- add a new choice in the game that is only accessable of the player typed in a specific `Class` value.
+- In the `SneakingToGoblinCampsite` method, the `sneak` option should only appear
+  if your `CharacterClass` is "rogue".
+
+  currently says (and should continue to say if you're a "rogue"): 
+  "move slowly through woods find horse and supplies by a goblins campfire.  Luckily 
+   for you the lazy goblin has fallen asleep. You can [sneak] or [attack]"
+
+  if you're NOT a rogue:
+  "move slowly through woods find horse and supplies by a goblins campfire.  Luckily 
+   for you the lazy goblin has fallen asleep. You can [attack]"

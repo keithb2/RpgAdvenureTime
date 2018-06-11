@@ -377,7 +377,7 @@ namespace RpgAdvenureTime
             string choice;
             Console.WriteLine("you sneak in and take back your stuff");
 
-            Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue] or [ignore]");
+            Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue], or [ignore]");
 
             choice = Console.ReadLine();
 
