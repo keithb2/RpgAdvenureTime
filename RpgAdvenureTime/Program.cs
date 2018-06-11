@@ -5,17 +5,19 @@ namespace RpgAdvenureTime
 {
     class Program
     {
-        private static Player _player;
+        private static bool _isCool;
+
+        private static Player PlayerOne { get; set; }
 
         static void Main(string[] args)
         {
-            CreatePlayer();
+            CharacterCreation();
 
-            Console.WriteLine("Welcome to the greatest adventure EVER, " + _player.Name + "!");
+            Console.WriteLine("Welcome to the greatest adventure EVER, " + PlayerOne.Name + "!");
             Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right/down]");
-
+            
             var choice = Console.ReadLine();
-
+            
             if (choice.Equals("left"))
             {
                 OasisStart();
@@ -41,15 +43,14 @@ namespace RpgAdvenureTime
             Console.ReadKey();
         }
 
-        private static void CreatePlayer()
+        private static void CharacterCreation()
         {
-            _player = new Player();
-
+            PlayerOne = new Player();
             Console.WriteLine("What's your name, dude?");
-            var name = Console.ReadLine();
-            _player.Name = name;
+            PlayerOne.Name = Console.ReadLine();
 
-            Console.WriteLine("Welcome, " + _player.Name);
+            Console.WriteLine("What's your class, broski? You a warrior, mage, or rogue?");
+            PlayerOne.CharacterClass = Console.ReadLine();
         }
 
         private static void RightDarkness()
@@ -204,8 +205,8 @@ namespace RpgAdvenureTime
 
         private static void OasisStart()
         {
-            Console.WriteLine("You arrive at a dusty oasis with barely any water for you and your horse");
-
+            Console.WriteLine(PlayerOne.Name + ", the " + PlayerOne.CharacterClass + ", arrives at a dusty oasis with barely any water for you and your horse");
+            
             Console.WriteLine("As you take a sip of water as does your horse you hear someone approach. You spin around in time to see a haggard toothless man.  \"Got any spare change?\"");
 
             Console.WriteLine("This man looks like trouble, give him some spare [change] or [tell] him to leave");
