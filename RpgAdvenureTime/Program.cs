@@ -1,18 +1,17 @@
 ﻿using System;
 using RpgAdvenureTime.Models;
+using RpgAdvenureTime.Services;
 
 namespace RpgAdvenureTime
 {
     class Program
     {
-        private static bool _isCool;
-
         private static Player PlayerOne { get; set; }
 
         static void Main(string[] args)
         {
             CharacterCreation();
-
+            
             Console.WriteLine("Welcome to the greatest adventure EVER, " + PlayerOne.Name + "!");
             Console.WriteLine("Which direction would you like to go? You have so many adventures to look forward too...[left/straight/right/down]");
             
@@ -51,6 +50,11 @@ namespace RpgAdvenureTime
 
             Console.WriteLine("What's your class, broski? You a warrior, mage, or rogue?");
             PlayerOne.CharacterClass = Console.ReadLine();
+
+            PlayerOne.Weapon = new Weapon();
+            PlayerOne.Weapon.Name = "rusty sword";
+            PlayerOne.Weapon.Damage = 3;
+            PlayerOne.Health = 15;
         }
 
         private static void RightDarkness()
@@ -316,7 +320,7 @@ namespace RpgAdvenureTime
 
             var choice = Console.ReadLine();
 
-            if (choice.Equals("sneak"))
+            if (choice.Equals("sneak") && PlayerOne.CharacterClass.Equals("rogue"))
             {
                 choice = SneakByGoblin();
             }
@@ -375,9 +379,25 @@ namespace RpgAdvenureTime
 
         private static void KillZombie()
         {
-            Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the zombie");
+            var zombie = new Monster
+            {
+                Name = "Zombie",
+                Damage = 1,
+                Health = 5
+            };
 
-            TravelingToCity();
+            var battleService = new BattleService();
+            var result = battleService.Fight();
+
+            if(result.Equals(BattleResult.PlayerWon))
+            {
+                Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the zombie");
+                TravelingToCity();
+            }
+            else
+            {
+                Console.WriteLine("you died");
+            }
         }
 
         private static string SneakByGoblin()
