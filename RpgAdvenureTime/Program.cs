@@ -304,7 +304,15 @@ namespace RpgAdvenureTime
 
         private static void SneakingToGoblinCampsite()
         {
-            Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
+
+            if (PlayerOne.CharacterClass.Equals("rogue"))
+            {
+                Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [sneak] or [attack]");
+            }
+            else
+            {
+                Console.WriteLine("move slowly through woods find horse and supplies by a goblins campfire.  Luckily for you the lazy goblin has fallen asleep. You can [attack]");
+            }
 
             var choice = Console.ReadLine();
 
