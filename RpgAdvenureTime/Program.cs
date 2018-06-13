@@ -531,26 +531,36 @@ namespace RpgAdvenureTime
 
                 if (Console.ReadLine().Equals("fight"))
                 {
-                    var bandits = new Monster
-                    {
-                        Name = "Bandits",
-                        Damage = 4,
-                        Health = 8
-                    };
-
-                    var result = _battleService.Fight(PlayerOne, bandits);
-
-                    Console.WriteLine("You defeated the bandits");
+                    BanditstFightSmallTown();
 
                 }
 
                 else if (Console.ReadLine().Equals("flee"))
                 {
-                    Console.WriteLine("You run away like a coward");
-
-                    Console.WriteLine("As you run away you hear the laughter of the bandits trail away.  You find yourself back on the road.");
+                    BanditFlee();
                 }
             }
+        }
+
+        private static void BanditstFightSmallTown()
+        {
+            var bandits = new Monster
+            {
+                Name = "Bandits",
+                Damage = 4,
+                Health = 8
+            };
+
+            var result = _battleService.Fight(PlayerOne, bandits);
+
+            Console.WriteLine("You defeated the bandits");
+        }
+
+        private static void BanditFlee()
+        {
+            Console.WriteLine("You run away like a coward");
+
+            Console.WriteLine("As you run away you hear the laughter of the bandits trail away.  You find yourself back on the road.");
         }
 
         private static void HelpingFarmers()
