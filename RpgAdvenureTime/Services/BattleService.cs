@@ -1,14 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RpgAdvenureTime.Models;
 
 namespace RpgAdvenureTime.Services
 {
     public class BattleService
     {
-        public BattleResult Fight()
+        // next stop: events!
+
+        public BattleResult Fight(Player player, Monster monster)
         {
-            return BattleResult.PlayerDied;
+            while(true)
+            {
+                monster.Health = monster.Health - player.Weapon.Damage;
+
+                if (monster.Health < 1)
+                    return BattleResult.PlayerWon;
+
+                player.Health = player.Health - monster.Damage;
+
+                if (player.Health < 1)
+                    return BattleResult.PlayerDied;
+            }
         }
     }
 

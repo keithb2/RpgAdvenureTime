@@ -6,6 +6,8 @@ namespace RpgAdvenureTime
 {
     class Program
     {
+        private static BattleService _battleService = new BattleService();
+
         private static Player PlayerOne { get; set; }
 
         static void Main(string[] args)
@@ -385,11 +387,10 @@ namespace RpgAdvenureTime
                 Damage = 1,
                 Health = 5
             };
+            
+            var result = _battleService.Fight(PlayerOne, zombie);
 
-            var battleService = new BattleService();
-            var result = battleService.Fight();
-
-            if(result.Equals(BattleResult.PlayerWon))
+            if (result.Equals(BattleResult.PlayerWon))
             {
                 Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the zombie");
                 TravelingToCity();
