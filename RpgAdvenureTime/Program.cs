@@ -300,7 +300,7 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("run"))
             {
-                GoblinARun(choice);
+                GoblinARun();
             }
             else if (choice.Equals("slowly"))
             {
@@ -333,9 +333,11 @@ namespace RpgAdvenureTime
             }
         }
 
-        private static void GoblinARun(string choice)
+        private static void GoblinARun()
         {
             Console.WriteLine("You take off running as fast as you can.  The tracks are clear to follow as you race through the thick forrest.  You stumble and nearly fall flat on your face when you trip over a tree root sticking up. You find the goblin thief ready and waiting for you, time to [fight] or [flee]");
+
+            var choice = Console.ReadLine();
 
             if (choice.Equals("run"))
             {
@@ -501,7 +503,7 @@ namespace RpgAdvenureTime
         {
             Console.WriteLine(PlayerOne.Name + "you go left");
 
-            Console.WriteLine("As you travel down the road you can see that the small town is empty.  You enter the town and see several buildings [house/store/shack/church");
+            Console.WriteLine("As you travel down the road you can see that the small town is empty.  You enter the town and see several buildings [house/store/shack/church]");
 
             var choice = Console.ReadLine();
 
@@ -526,7 +528,8 @@ namespace RpgAdvenureTime
 
                 Console.WriteLine("The bandits charge at you, prepare to [fight], or [flee]");
 
-                if (choice.Equals("fight"))
+
+                if (Console.ReadLine().Equals("fight"))
                 {
                     var bandits = new Monster
                     {
@@ -537,9 +540,11 @@ namespace RpgAdvenureTime
 
                     var result = _battleService.Fight(PlayerOne, bandits);
 
+                    Console.WriteLine("You defeated the bandits");
+
                 }
 
-                else if (choice.Equals("flee"))
+                else if (Console.ReadLine().Equals("flee"))
                 {
                     Console.WriteLine("You run away like a coward");
 
