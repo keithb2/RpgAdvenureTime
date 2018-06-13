@@ -499,7 +499,53 @@ namespace RpgAdvenureTime
 
         private static void GoLeftGobo()
         {
-            Console.WriteLine("you go left");
+            Console.WriteLine(PlayerOne.Name + "you go left");
+
+            Console.WriteLine("As you travel down the road you can see that the small town is empty.  You enter the town and see several buildings [house/store/shack/church");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("house"))
+            {
+                Console.WriteLine(PlayerOne.Name + "You enter a nice looking house");
+            }
+
+            else if (choice.Equals("store"))
+            {
+                Console.WriteLine(PlayerOne.Name + "You enter store");
+            }
+
+            else if (choice.Equals("shack"))
+            {
+                Console.WriteLine(PlayerOne.Name + "You enter shack");
+            }
+
+            else if (choice.Equals("church"))
+            {
+                Console.WriteLine(PlayerOne.Name + "You enter the church and its occupied by two bandits");
+
+                Console.WriteLine("The bandits charge at you, prepare to [fight], or [flee]");
+
+                if (choice.Equals("fight"))
+                {
+                    var bandits = new Monster
+                    {
+                        Name = "Bandits",
+                        Damage = 4,
+                        Health = 8
+                    };
+
+                    var result = _battleService.Fight(PlayerOne, bandits);
+
+                }
+
+                else if (choice.Equals("flee"))
+                {
+                    Console.WriteLine("You run away like a coward");
+
+                    Console.WriteLine("As you run away you hear the laughter of the bandits trail away.  You find yourself back on the road.");
+                }
+            }
         }
 
         private static void HelpingFarmers()
