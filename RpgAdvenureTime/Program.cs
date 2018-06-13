@@ -437,6 +437,15 @@ namespace RpgAdvenureTime
         {
             Console.WriteLine("you attack.");
 
+            var goblin = new Monster
+            {
+                Name = "Goblin",
+                Damage = 2,
+                Health = 8
+            };
+
+            var result = _battleService.Fight(PlayerOne, goblin);
+            
             Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
 
             var choice = Console.ReadLine();
