@@ -62,6 +62,31 @@ namespace RpgAdvenureTime
         private static void RightDarkness()
         {
             Console.WriteLine("you go right into the dakness. end of tunnel you find [zombies]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("zombies"))
+            {
+                Console.WriteLine("you attack.");
+
+                var zombies = new Monster
+                {
+                    Name = "zombies",
+                    Damage = 9,
+                    Health = 8
+                };
+
+                var result = _battleService.Fight(PlayerOne, zombies);
+
+                if (result.Equals(BattleResult.PlayerWon))
+                {
+                    Console.WriteLine("You killed the zombies in the dark tunnel");
+                }
+                else
+                {
+                    Console.WriteLine("you died a horrible death as the zombies ate you alive like lamb chops.");
+                }
+            }
         }
 
         private static void LeftDarkness()
@@ -265,7 +290,14 @@ namespace RpgAdvenureTime
 
         private static void CampOasis()
         {
-            Console.WriteLine("you sleep peacefully through the night, you awake and continue journey.");
+            Console.WriteLine("you sleep peacefully through the night, you awake and continue journey towards the small desert [town]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("town"))
+            {
+                DesertTown();
+            }
         }
 
         private static void ContinueTravels()
@@ -579,6 +611,56 @@ namespace RpgAdvenureTime
 
         private static void DarkTowerEntrance()
         {
+            DarkTowerEntrance2();
+        }
+
+        private static void DesertTown()
+        {
+            DesertTownfight();
+        }
+
+        private static void DesertTownfight()
+        {
+            Console.WriteLine("The small desert town comes into view. " + PlayerOne.Name + ",the " + PlayerOne.CharacterClass + "walks into the town and is attacked by raiders.  Do you [fight] or [flee]?");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("flee"))
+            {
+                Console.WriteLine("you run away.");
+            }
+
+            else if (choice.Equals("fight"))
+            {
+                RaidersFightDesertTown();
+            }
+        }
+
+        private static void RaidersFightDesertTown()
+        {
+            Console.WriteLine("You attack the raiders");
+
+            var Raiders = new Monster
+            {
+                Name = "Raiders",
+                Damage = 4,
+                Health = 10
+            };
+
+            var result = _battleService.Fight(PlayerOne, Raiders);
+
+            if (result.Equals(BattleResult.PlayerWon))
+            {
+                Console.WriteLine("You killed the raiders");
+            }
+            else
+            {
+                Console.WriteLine("you died");
+            }
+        }
+
+        private static void DarkTowerEntrance2()
+        {
             Console.WriteLine(PlayerOne.Name + ", " + "you are standing at the main entrance to a tall dark and scary looking tower.  You see a rotted wooden [door], and a [window] on the second floor as the only ways to get in");
 
             var choice = Console.ReadLine();
@@ -586,6 +668,7 @@ namespace RpgAdvenureTime
             if (choice.Equals("door"))
             {
                 Console.WriteLine(PlayerOne.Name + ", " + "you enter the dark tower through the door.");
+
             }
 
             else if (choice.Equals("window"))
