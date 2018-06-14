@@ -326,7 +326,7 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("sneak") && PlayerOne.CharacterClass.Equals("rogue"))
             {
-                choice = SneakByGoblin();
+                SneakByGoblin();
             }
             else if (choice.Equals("attack"))
             {
@@ -405,14 +405,13 @@ namespace RpgAdvenureTime
             }
         }
 
-        private static string SneakByGoblin()
+        private static void SneakByGoblin()
         {
-            string choice;
             Console.WriteLine("you sneak in and take back your stuff");
 
             Console.WriteLine("As you sneak into the camp you see the goblin you see a prisoner. you can [rescue], or [ignore]");
 
-            choice = Console.ReadLine();
+            var choice = Console.ReadLine();
 
             if (choice.Equals("rescue"))
             {
@@ -423,8 +422,6 @@ namespace RpgAdvenureTime
             {
                 IgnoreGoblinPrisoner();
             }
-
-            return choice;
         }
 
         private static void IgnoreGoblinPrisoner()
@@ -452,28 +449,30 @@ namespace RpgAdvenureTime
 
             if (result.Equals(BattleResult.PlayerWon))
             {
-                Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the goblin");
-
-                Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
-
-                var choice = Console.ReadLine();
-
-                if (choice.Equals("loot"))
-                {
-                    Loot();
-                }
-                else if (choice.Equals("revive"))
-                {
-                    Revive();
-                }
+                PlayerWonGobo2();
             }
             else
             {
                 Console.WriteLine("you died");
-                
             }
-            
+        }
 
+        private static void PlayerWonGobo2()
+        {
+            Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the goblin");
+
+            Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("loot"))
+            {
+                Loot();
+            }
+            else if (choice.Equals("revive"))
+            {
+                Revive();
+            }
         }
 
         private static void Revive()
@@ -571,6 +570,28 @@ namespace RpgAdvenureTime
             Console.WriteLine(PlayerOne.Name + ", " + "You enter the church and its occupied by two bandits");
 
             Console.WriteLine("The bandits charge at you, prepare to [fight], or [flee]");
+        }
+
+        private static void darktower()
+        {
+            DarkTowerEntrance();
+        }
+
+        private static void DarkTowerEntrance()
+        {
+            Console.WriteLine(PlayerOne.Name + ", " + "you are standing at the main entrance to a tall dark and scary looking tower.  You see a rotted wooden [door], and a [window] on the second floor as the only ways to get in");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("door"))
+            {
+                Console.WriteLine(PlayerOne.Name + ", " + "you enter the dark tower through the door.");
+            }
+
+            else if (choice.Equals("window"))
+            {
+                Console.WriteLine(PlayerOne.Name + ", " + "you climb up the tower and enter through the window");
+            }
         }
 
         private static void BanditstFightSmallTown()

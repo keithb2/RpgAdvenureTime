@@ -1,1 +1,1 @@
-around like 528 bandit fight/flee.  need to remember how to 
+fix junk on 410 
