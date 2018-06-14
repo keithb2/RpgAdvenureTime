@@ -79,6 +79,8 @@ namespace RpgAdvenureTime
         private static void Treasure()
         {
             Console.WriteLine("you loot treasure");
+
+            Console.WriteLine(PlayerOne.Name + ", " + "you find 10 gold pieces.");
         }
 
         private static void DugAHoleDown()
@@ -447,21 +449,31 @@ namespace RpgAdvenureTime
             };
 
             var result = _battleService.Fight(PlayerOne, goblin);
+
+            if (result.Equals(BattleResult.PlayerWon))
+            {
+                Console.WriteLine("the," + PlayerOne.CharacterClass + ", kills the goblin");
+
+                Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
+
+                var choice = Console.ReadLine();
+
+                if (choice.Equals("loot"))
+                {
+                    Loot();
+                }
+                else if (choice.Equals("revive"))
+                {
+                    Revive();
+                }
+            }
+            else
+            {
+                Console.WriteLine("you died");
+                
+            }
             
-            Console.WriteLine("goblin is dead, you notice injured prisoner you can [loot] or [revive]");
 
-            var choice = Console.ReadLine();
-
-            if (choice.Equals("loot"))
-            {
-                Loot();
-
-            }
-            else if (choice.Equals("revive"))
-            {
-                Revive();
-
-            }
         }
 
         private static void Revive()
@@ -509,25 +521,22 @@ namespace RpgAdvenureTime
 
             if (choice.Equals("house"))
             {
-                Console.WriteLine(PlayerOne.Name + "You enter a nice looking house");
+                SmallTownHouseA();
             }
 
             else if (choice.Equals("store"))
             {
-                Console.WriteLine(PlayerOne.Name + "You enter store");
+                SmallTownStoreA();
             }
 
             else if (choice.Equals("shack"))
             {
-                Console.WriteLine(PlayerOne.Name + "You enter shack");
+                SmallTownShackA();
             }
 
             else if (choice.Equals("church"))
             {
-                Console.WriteLine(PlayerOne.Name + "You enter the church and its occupied by two bandits");
-
-                Console.WriteLine("The bandits charge at you, prepare to [fight], or [flee]");
-
+                ChurchFightA();
 
                 if (Console.ReadLine().Equals("fight"))
                 {
@@ -542,6 +551,28 @@ namespace RpgAdvenureTime
             }
         }
 
+        private static void SmallTownHouseA()
+        {
+            Console.WriteLine(PlayerOne.Name + ", " + "You enter a nice looking house");
+        }
+
+        private static void SmallTownStoreA()
+        {
+            Console.WriteLine(PlayerOne.Name + ", " + "You enter store");
+        }
+
+        private static void SmallTownShackA()
+        {
+            Console.WriteLine(PlayerOne.Name + ", " + "You enter shack");
+        }
+
+        private static void ChurchFightA()
+        {
+            Console.WriteLine(PlayerOne.Name + ", " + "You enter the church and its occupied by two bandits");
+
+            Console.WriteLine("The bandits charge at you, prepare to [fight], or [flee]");
+        }
+
         private static void BanditstFightSmallTown()
         {
             var bandits = new Monster
@@ -553,19 +584,19 @@ namespace RpgAdvenureTime
 
             var result = _battleService.Fight(PlayerOne, bandits);
 
-            Console.WriteLine("You defeated the bandits");
+            Console.WriteLine(PlayerOne.Name + ", " + "You defeated the bandits");
         }
 
         private static void BanditFlee()
         {
-            Console.WriteLine("You run away like a coward");
+            Console.WriteLine(PlayerOne.Name + ", " + "You run away like a coward");
 
             Console.WriteLine("As you run away you hear the laughter of the bandits trail away.  You find yourself back on the road.");
         }
 
         private static void HelpingFarmers()
         {
-            Console.WriteLine("you use [muscle] or [brains]");
+            Console.WriteLine(PlayerOne.Name + ", " + "you use [muscle] or [brains]");
 
             var choice = Console.ReadLine();
 
@@ -611,7 +642,7 @@ namespace RpgAdvenureTime
 
         private static void RunFromGoblin()
         {
-            Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock the trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
+            Console.WriteLine("You push the goblin off and turn and start running.  Its so dark you dont see the rock that trips you and you fall flat on your face.  Before you can get up you feel a rust sword plung into your back... you slowly bleed out while listening to the goblin laugh.");
         }
 
         private static void FightGoblin()
