@@ -753,5 +753,26 @@ namespace RpgAdvenureTime
         {
             Console.WriteLine("You fight back with all your might but the goblin is faster and manages to stab you with his rusty sword. It is but a flesh wound you think and fight on finaly killing the goblin.");
         }
+
+        private static void ThievesFight()
+        {
+            Console.WriteLine("You travel for a long while down a winding dirt road and see no one except your shadow.  Out of no where Thieves burst from the shadows ready for a [fight]");
+
+            var choice = Console.ReadLine();
+
+            if (choice.Equals("fight"))
+            {
+                Console.WriteLine("You fight the thieves tooth and nail.");
+
+                var Thieves = new Monster
+                {
+                    Name = "Thieves",
+                    Damage = 3,
+                    Health = 5
+                };
+
+                var result = _battleService.Fight(PlayerOne, Thieves);
+            }
+        }
     }
 }
