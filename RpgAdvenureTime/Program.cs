@@ -70,9 +70,16 @@ namespace RpgAdvenureTime
 
             var choice = Console.ReadLine();
 
-            if (choice.Equals(tavern))
+            if (choice.Equals("tavern"))
             {
-                Console.WriteLine(You enter the tavern)
+                Console.WriteLine("You enter the tavern");
+            }
+
+            else if (choice.Equals("market"))
+            {
+                Console.WriteLine("You go into the market, only one market stall is stilll open.  You approach the grissled looking merchant with concern as you notice his 2 armed guards hiding in the shadows.");
+
+
             }
         }
     }
